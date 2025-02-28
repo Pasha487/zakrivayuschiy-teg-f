@@ -33,7 +33,7 @@
 
 .header-hat {
   inline-size: var(--header-inline-size);
-  block-size: var(--header-block-size);
+  padding-block: 128px;
   margin-block: var(--header-margin-block);
 }
  
@@ -114,7 +114,7 @@
 .card__content {
   display: grid;
   gap: 27px;
-  padding: 27px 25px 25px;
+  padding: 28px 25px 25px;
   border-top: 2px solid var(--accent-color);
 }
 
@@ -129,7 +129,7 @@
   justify-content: end;
 }
 
-button {
+.button {
   font-family: var(--accent-font), fantasy;
   font-size: var(--accent-font-size);
   background-color: var(--main-color);
@@ -139,20 +139,20 @@ button {
   overflow: hidden;
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
   transition: box-shadow 0.3s ease;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
 }
 
-button[type]::before {
+.button::before {
   content: '';
   height: 100%;
   width: 100%;
@@ -164,7 +164,7 @@ button[type]::before {
   transition: transform 0.5s ease-in-out;
 }
 
-button[type]:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
@@ -206,7 +206,7 @@ button[type]:hover::before {
   gap: 8px;
   place-items: center center;
   justify-self: center;
-  padding: 19px 21px;
+  padding: 14px 21px;
   color: #fff;
 }
 
@@ -355,6 +355,10 @@ button[type]:hover::before {
 
 
 @media (width <= 375px) {
+  .header-hat {
+    padding-block: 120px;
+  }
+
   .card__label {
     right: 13px;
   }
